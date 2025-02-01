@@ -3,30 +3,38 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 html {
   font-size: 62.5%;
-  box-sizing: border-box;
 }
 
 body {
   font-family: 'Press Start 2P', sans-serif;
   color: #eee;
   background-color: #222;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-/* LAYOUT */
+body.light-mode {
+  background-color: #fff;
+  color: #222;
+}
+
 header {
   position: relative;
   height: 35vh;
   border-bottom: 7px solid #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
 }
 
 main {
   height: 65vh;
-  color: #eee;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -44,19 +52,13 @@ main {
   font-size: 2rem;
 }
 
-/* ELEMENTS STYLE */
 h1 {
   font-size: 4rem;
   text-align: center;
-  position: absolute;
-  width: 100%;
-  top: 52%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .number {
-  background:#CCCCFF;
+  background: #CCCCFF;
   color: #333;
   font-size: 6rem;
   width: 15rem;
@@ -72,7 +74,8 @@ h1 {
   font-size: 1.4rem;
   position: absolute;
   top: 2rem;
-  right: 2rem;
+  right: 8rem;
+  z-index: 10;
 }
 
 .again {
@@ -90,7 +93,6 @@ h1 {
   padding: 2.5rem;
   width: 25rem;
   text-align: center;
-  display: block;
   margin-bottom: 3rem;
 }
 
@@ -115,4 +117,55 @@ h1 {
 
 .label-score {
   margin-bottom: 2rem;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-label {
+  width: 50px;
+  height: 25px;
+  background: #ccc;
+  border-radius: 15px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-label::after {
+  content: '';
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 1.5px;
+  left: 2px;
+  transition: transform 0.3s ease-in-out;
+}
+
+#dark-mode-toggle {
+  display: none;
+}
+
+#dark-mode-toggle:checked + .toggle-label {
+  background: #40E0D0;
+}
+
+#dark-mode-toggle:checked + .toggle-label::after {
+  transform: translateX(25px);
+}
+
+body.light-mode .toggle-label {
+  background: #222;
+}
+
+body.light-mode .toggle-label::after {
+  background: white;
 }
