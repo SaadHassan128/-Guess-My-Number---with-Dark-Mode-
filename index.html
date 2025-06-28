@@ -1,35 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="Guess My Number - A fun number guessing game"
+    />
+    <meta name="theme-color" content="#222" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
     <title>Guess My Number!</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon" />
+  </head>
+  <body>
     <header>
-        <h1>Guess My Number!</h1>
-        <p class="between">(Between 1 and 20)</p>
-        <button class="btn again">Again!</button>
-        <div class="number">?</div>
+      <h1>Guess My Number!</h1>
+      <p class="between">(Between 1 and 20)</p>
+      <button class="btn again">Again!</button>
+      <div class="number">?</div>
+      <div class="number-spacer"></div>
 
-        <div class="dark-mode-container">
-            <input type="checkbox" id="dark-mode-toggle">
-            <label for="dark-mode-toggle" class="toggle-label"></label>
-        </div>
+      <div class="dark-mode-container">
+        <input type="checkbox" id="dark-mode-toggle" />
+        <label for="dark-mode-toggle" class="toggle-label"></label>
+      </div>
     </header>
     <main>
-        <section class="left">
-            <input type="number" class="guess">
-            <button class="btn check">Check!</button>
-        </section>
-        <section class="right">
-            <p class="message">Start guessing...</p>
-            <p class="label-score">💯 Score: <span class="score">20</span></p>
-            <p class="label-highscore">🥇 Highscore: <span class="highscore">0</span></p>
-        </section>
+      <section class="left">
+        <input type="number" class="guess" />
+        <button class="btn check">Check!</button>
+      </section>
+      <section class="right">
+        <p class="message">Start guessing...</p>
+        <p class="label-score">💯 Score: <span class="score">20</span></p>
+        <p class="label-highscore">
+          🥇 Highscore: <span class="highscore">0</span>
+        </p>
+      </section>
     </main>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
